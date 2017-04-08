@@ -1,6 +1,6 @@
 # Introduction
 Automatic video caption generation with STA-FG framework<br>
-This code is used for the implementation of models which described in the paper titled [Fused-GRU for with Semantic-Temporal Attention for Video Captioning]
+This code is used for the implementation of models which described in the paper titled [Fused-GRU for with Semantic-Temporal Attention for Video Captioning]()
 # Requirements software
 1. **Python 2.7**<br>The simplest way to install it is to use `Annaconda`.<br>
 2. **Theano** <br> We recomend you to use the newest version. Simply type 
