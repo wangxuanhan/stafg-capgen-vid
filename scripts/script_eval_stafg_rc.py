@@ -138,7 +138,7 @@ def sent_generate(c3d_generator,res_generator,vidID,feat_type='G',k=5):
         cur_scores = []
         for idx,[batch_i, word_i] in enumerate(zip(batch_idx, word_idx)):
             c_word = CFG['idx2word'][word_i]
-            # if reach the end of sentence. record this sentence and scores
+            
             if c_word == '<eos>':
                 dead_k += 1
                 if iword>0:
@@ -156,7 +156,7 @@ def sent_generate(c3d_generator,res_generator,vidID,feat_type='G',k=5):
             cur_scores.append(cur_top_live_k_scores[idx])
         iword += 1
         if dead_k == k or iword >= CFG['SEQUENCE LENGTH'] - 1:
-            # if it reaches the maxlength but generation of some sentences is not done yet
+            
             if dead_k < k:
                 top_k_sents += next_input_sents
                 top_k_scores += cur_scores
