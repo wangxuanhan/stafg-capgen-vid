@@ -58,7 +58,7 @@ def generate_keywords(generator,vidID,top_k=10,feat_type='ResNet'):
 
 def sent_generate(generator,vidID,feat_type='G',k=5):
     # beam search algorithm for sentence generation
-    # change the path of features by yours
+    # use your path of features
     feats = []
     c3d_feats = []
     if feat_type=='G':
@@ -100,7 +100,7 @@ def sent_generate(generator,vidID,feat_type='G',k=5):
         cur_scores = []
         for idx,[batch_i, word_i] in enumerate(zip(batch_idx, word_idx)):
             c_word = CFG['idx2word'][word_i]
-            # if reach the end of sentence. record this sentence and scores
+            # if reach the end of sentence. store this sentence and scores
             if c_word == '<eos>':
                 dead_k += 1
                 if iword>0:
@@ -118,7 +118,7 @@ def sent_generate(generator,vidID,feat_type='G',k=5):
             cur_scores.append(cur_top_live_k_scores[idx])
         iword += 1
         if dead_k == k or iword >= CFG['SEQUENCE LENGTH'] - 1:
-            # if it reaches the maxlength but generation of some sentences is not done yet
+            # if it reaches the maxlength but generation has not done yet
             if dead_k < k:
                 top_k_sents += next_input_sents
                 top_k_scores += cur_scores
@@ -142,7 +142,7 @@ def print_batch_sentence(sents,scores):
 
 
 def sent_generate_v1(generator, vidID, feat_type='ResNet'):
-    # simple version of sentence generation 
+    # simple version of sentence generation. choose the word with max scores at each time step
     feats = []
     if feat_type=='G':
     	frame_feats = np.copy(data_reader.data_source['FEATs'][vidID])
