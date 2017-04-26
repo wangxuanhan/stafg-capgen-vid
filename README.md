@@ -10,7 +10,7 @@ This code is used for the implementation of models which described in the paper 
 
 # Preparation
 To run this code, please following intructions.<br>
-1. You need to create a dataset folder. Then unzip the msvd.zip file which in the "data" folder into the dataset folder.<br>
+1. You need to create a dataset folder and dowload preproccessed dataset [here](). Then unzip the msvd.zip file which in the "data" folder into the dataset folder.<br>
 2. Revise config file: tools/cfg.py and set your dataset path. 
 3. Revise data processing file: tools/data_reader.py and reset your features path. 
 # Training & Testing
