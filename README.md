@@ -9,7 +9,7 @@ This code is used for the implementation of models which described in the paper 
 4. **[coco-caption](https://github.com/tylin/coco-caption)**<br> Dowload this evaluation code. You need to add the path into your #PYTHONPATH or move it to the ${ROOTPATH}. 
 
 # Preparation
-To run this code, please following intructions.<br>
+To run this code, please follow intructions below.<br>
 1. You need to create a dataset folder and dowload preproccessed dataset [here](). Then unzip the msvd.zip file which in the "data" folder into the dataset folder.<br>
 2. Revise config file: tools/cfg.py and set your dataset path. 
 3. Revise data processing file: tools/data_reader.py and reset your features path. 
